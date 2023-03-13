@@ -1,0 +1,76 @@
+{
+	"scopeName": "source.calcrs",
+	"fileTypes": "calcrs",
+	"name": "Calculator.rs",
+	"patterns": [
+		{"include": "#statement"},
+		{"include": "#variable"},
+		{"include": "#number"}
+	],
+	"respository": {
+		"statement": {
+			"patterns": [
+				{"include": "#expression"},
+				{"include": "#assignment"},
+				{"include": "#comment"}
+			]
+		},
+
+		"expression": {
+            "patterns": [
+				{"include": "#variable"},
+				{"include": "#number"},
+				{"include": "#symbol"},
+				{"include": "#paren-expression"}
+			]
+        },
+		"paren-expression": {
+			"begin": "\\(",
+			"end": "\\)",
+			"name": "expression.group",
+			"patterns": [{
+				"include": "#expression"
+			}]
+		},
+		"assignment": {
+			"patterns": [
+				{"include": "#variable"},
+				{"include": "#symbol"},
+				{"include": "#number"},
+				{"include": "#expression"}
+			]
+		},
+		"goto-statement": {
+			"begin": "\\{",
+			"end": "\\}",
+			"patterns": [
+				{"include": "#expression"}
+			]
+		},
+
+		"variable": {
+			"patterns": [{
+				"match": "^[_A-Za-z0-9]+$",
+				"name": "variable.calcrs"
+			}]
+		},
+		"number": {
+			"patterns": [{
+				"match": "-?\\d+(\\.\\d{1,})$|(^[1-9]\\d*$)",
+				"name": "constant.numeric.calcrs"
+			}]
+		},
+		"symbol": {
+			"patterns": [{
+				"match": "[+-*/^=]",
+				"name": "symbol.calcrs"
+			}]
+		},
+		"comment": {
+			"patterns": [{
+				"match": "#.*",
+				"name": "comment.line.calcrs"
+			}]
+		}
+	}
+}

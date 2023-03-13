@@ -1,0 +1,29 @@
+{
+  "name": "calculator-rs-support",
+  "displayName": "calcrs",
+  "description": "",
+  "version": "0.0.1",
+  "main": "./src/extension.js",
+  "engines": {
+    "vscode": "^1.54.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "activationEvents": [
+    "onLanguage:Calculator.rs"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "calcrs",
+      "aliases": ["Calculator.rs", "calcrs"],
+      "extensions": [".calcrs"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "calcrs",
+      "scopeName": "source.calcrs",
+      "path": "./syntaxes/calcrs.tmLanguage.json"
+    }]
+  }
+}
