@@ -1,17 +1,13 @@
 {
   "name": "calculator-rs-support",
-  "displayName": "calcrs",
+  "displayName": "Calculator.rs support",
   "description": "",
   "version": "0.0.1",
-  "main": "./src/extension.js",
   "engines": {
     "vscode": "^1.54.0"
   },
   "categories": [
     "Programming Languages"
-  ],
-  "activationEvents": [
-    "onLanguage:Calculator.rs"
   ],
   "contributes": {
     "languages": [{
