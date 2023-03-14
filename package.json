@@ -1,8 +1,10 @@
 {
   "name": "calculator-rs-support",
   "displayName": "Calculator.rs support",
-  "description": "",
-  "version": "0.0.1",
+  "description": "VSCode extension for Calculator.rs",
+  "version": "1.0.0",
+  "publisher": "BHznJNs",
+  "repository": "https://github.com/BHznJNs/Calculator.rs-VSCode-extension",
   "engines": {
     "vscode": "^1.54.0"
   },
