@@ -2,12 +2,19 @@
 	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
 	"name": "Calculator.rs",
 	"patterns": [
+		{"include": "#keywords"},
 		{"include": "#functions"},
 		{"include": "#variable"},
 		{"include": "#numbers"},
 		{"include": "#comments"}
 	],
 	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control",
+				"match": "\b(out|for|ctn|brk)\b"
+			}]
+		},
 		"functions": {
 			"patterns": [{
 				"name": "entity.name.function.calcrs",
