@@ -2,7 +2,7 @@
   "name": "calculator-rs-support",
   "displayName": "Calculator.rs support",
   "description": "VSCode extension for Calculator.rs",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "publisher": "BHznJNs",
   "license": "MIT",
   "repository": "https://github.com/BHznJNs/Calculator.rs-VSCode-extension",

@@ -1,3 +1,3 @@
 # Extension for Calculator.rs
 
-This is a test vscode extension for Calcular.rs.
+A syntax highlight extension to [Calculator.rs](https://github.com/BHznJNs/Calculator.rs).
