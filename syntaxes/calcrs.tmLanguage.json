@@ -1,50 +1,58 @@
 {
 	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
 	"name": "Calculator.rs",
+	"scopeName": "source.calcrs",
+	"fileTypes": ["calcrs"],
 	"patterns": [
 		{"include": "#keywords"},
-		{"include": "#functions"},
+		{"include": "#types"},
+		{"include": "#function"},
 		{"include": "#variable"},
-		{"include": "#numbers"},
-		{"include": "#comments"}
+		{"include": "#number"},
+		{"include": "#comment"}
 	],
 	"repository": {
 		"keywords": {
 			"patterns": [{
 				"name": "keyword.control",
-				"match": "\b(out|for|ctn|brk)\b"
+				"match": "out|for|if|ctn|brk|fn|import"
 			}]
 		},
-		"functions": {
+		"types": {
 			"patterns": [{
-				"name": "entity.name.function.calcrs",
+				"name": "storage.name.type",
+				"match": "\\$(num|str|arr|lexpr|func)"
+			}]
+		},
+		"function": {
+			"patterns": [{
+				"name": "entity.name.function",
 				"match": "([_a-zA-Z][_a-zA-Z0-9]*)(?=\\()"
 			}]
 		},
 		"variable": {
 			"patterns": [{
-				"name": "variable.calcrs",
+				"name": "variable",
 				"match": "[_a-zA-Z][_a-zA-Z0-9]*"
 			}]
 		},
-		"numbers": {
+		"number": {
 			"patterns": [
 				{
-					"name": "constant.numeric.float.calcrs",
+					"name": "constant.numeric.float",
 					"match": "^(-?\\d+)(\\.\\d+)?$"
 				},
 				{
-					"name": "constant.numeric.integer.calcrs",
+					"name": "constant.numeric.integer",
 					"match": "-?[0-9]+"
 				}
 			]
 		},
-		"comments": {
+		"comment": {
 			"patterns": [{
-				"name": "comment.line.calcrs",
+				"name": "comment.line",
 				"match": "#.*$"
 			}]
 		}
-	},
-	"scopeName": "source.calcrs"
+	}
 }
