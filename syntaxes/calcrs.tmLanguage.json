@@ -15,13 +15,13 @@
 		"keywords": {
 			"patterns": [{
 				"name": "keyword.control",
-				"match": "out|for|if|ctn|brk|fn|import"
+				"match": "out|for|if|ctn|brk|fn|import|cls|new"
 			}]
 		},
 		"types": {
 			"patterns": [{
 				"name": "storage.name.type",
-				"match": "\\$(num|str|arr|lexpr|func)"
+				"match": "\\$(_|num|str|arr|lexpr|func)"
 			}]
 		},
 		"function": {
