@@ -23,7 +23,7 @@
 		"types": {
 			"patterns": [{
 				"name": "storage.name.type",
-				"match": "\\$(_|num|str|arr|lexpr|func)"
+				"match": "\\$(_|num|str|arr|lexpr|func|obj)"
 			}]
 		},
 		"function": {
