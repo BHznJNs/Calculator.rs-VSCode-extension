@@ -15,7 +15,7 @@
 		"keywords": {
 			"patterns": [{
 				"name": "keyword.control",
-				"match": "out|for|if|ctn|brk|fn|import|cls|new"
+				"match": "(out|for|if|ctn|brk|fn|import|cls|new)\\s"
 			}]
 		},
 		"types": {
