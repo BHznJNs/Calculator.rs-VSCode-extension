@@ -7,8 +7,10 @@
 		{"include": "#keywords"},
 		{"include": "#types"},
 		{"include": "#function"},
+		{"include": "#class"},
 		{"include": "#variable"},
 		{"include": "#number"},
+		{"include": "#string"},
 		{"include": "#comment"}
 	],
 	"repository": {
@@ -30,6 +32,12 @@
 				"match": "([_a-zA-Z][_a-zA-Z0-9]*)(?=\\()"
 			}]
 		},
+		"class": {
+			"patterns": [{
+				"name": "entity.name.function",
+				"match": "(?<=new\\s).*?(?=[\\s]*\\[)"
+			}]
+		},
 		"variable": {
 			"patterns": [{
 				"name": "variable",
@@ -45,6 +53,14 @@
 				{
 					"name": "constant.numeric.integer",
 					"match": "-?[0-9]+"
+				}
+			]
+		},
+		"string": {
+			"patterns": [
+				{
+					"name": "string.quoted",
+					"match": "\".*\""
 				}
 			]
 		},
