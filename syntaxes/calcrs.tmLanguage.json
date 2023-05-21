@@ -17,13 +17,13 @@
 		"keywords": {
 			"patterns": [{
 				"name": "keyword.control",
-				"match": "(out|for|if|ctn|brk|fn|import|cls|new)\\s"
+				"match": "(?<!@)\\b(out|for|if|ctn|brk|fn|import|cl|new)\\b"
 			}]
 		},
 		"types": {
 			"patterns": [{
 				"name": "storage.name.type",
-				"match": "\\$(_|num|str|arr|lexpr|func|obj)"
+				"match": "\\$(_|Bool|Numb|Str|Array|LazyExpr|Func|Obj)"
 			}]
 		},
 		"function": {
@@ -39,16 +39,22 @@
 			}]
 		},
 		"variable": {
-			"patterns": [{
-				"name": "variable",
-				"match": "[_a-zA-Z][_a-zA-Z0-9]*"
-			}]
+			"patterns": [
+				{
+					"name": "constant.language.calcrs",
+					"match": "\\b(TRUE|FALSE|EPS|PI|E)\\b"
+				},
+				{
+					"name": "variable",
+					"match": "[_a-zA-Z][_a-zA-Z0-9]*"
+				}
+			]
 		},
 		"number": {
 			"patterns": [
 				{
 					"name": "constant.numeric.float",
-					"match": "^(-?\\d+)(\\.\\d+)?$"
+					"match": "(-?\\d+)(\\.\\d+)?"
 				},
 				{
 					"name": "constant.numeric.integer",
@@ -56,17 +62,37 @@
 				}
 			]
 		},
+
 		"string": {
 			"patterns": [
 				{
-					"name": "string.quoted",
-					"match": "\".*\""
+					"name": "string.quoted.single",
+					"begin": "'",
+					"end": "'",
+					"patterns": [{
+						"include": "#string-escaped-char"
+					}]
+				},
+				{
+					"name": "string.quoted.double",
+					"begin": "\"",
+					"end": "\"",
+					"patterns": [{
+						"include": "#string-escaped-char"
+					}]
 				}
 			]
 		},
+		"string-escaped-char": {
+			"patterns": [{
+				"name": "constant.character.escape.v",
+				"match": "\\\\([\\$abfnrtv\\\\'\"])"
+			}]
+		},
+
 		"comment": {
 			"patterns": [{
-				"name": "comment.line",
+				"name": "comment.line.number-sign",
 				"match": "#.*$"
 			}]
 		}

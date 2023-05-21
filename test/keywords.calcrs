@@ -1,4 +1,10 @@
 a = 0
+b = 1.1
+
+a = TRUE
+
 for 10 {a += 1}
 if 1 {a += 1}
 out a
+
+fn (i $Numb) {out i}
