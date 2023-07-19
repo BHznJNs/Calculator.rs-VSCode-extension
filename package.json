@@ -2,7 +2,7 @@
   "name": "calculator-rs-support",
   "displayName": "Calculator.rs support",
   "description": "VSCode extension for Calculator.rs",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "publisher": "BHznJNs",
   "license": "MIT",
   "repository": "https://github.com/BHznJNs/Calculator.rs-VSCode-extension",
@@ -10,7 +10,8 @@
     "vscode": "^1.54.0"
   },
   "categories": [
-    "Programming Languages"
+    "Programming Languages",
+    "Snippets"
   ],
   "contributes": {
     "languages": [{
@@ -23,6 +24,10 @@
       "language": "calcrs",
       "scopeName": "source.calcrs",
       "path": "./syntaxes/calcrs.tmLanguage.json"
+    }],
+    "snippets": [{
+      "language": "calcrs",
+      "path": "./snippets/calcrs.snippets.json"
     }]
   }
 }
